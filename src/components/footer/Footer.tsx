@@ -67,11 +67,11 @@ const Footer = () => {
 				<SocialMediaContainer>
 					<SocialMediaWrapper>
 						<SocialLogo to="/" onClick={scrollToHome}>
-							dolla
+							Stock Analytica
 						</SocialLogo>
 						<WebsiteRights>
-							dolla &copy; {new Date().getFullYear()} All rights
-							reserved.
+							All rights reserved by Stock Analytica &copy;{" "}
+							{new Date().getFullYear()}
 						</WebsiteRights>
 						<SocialIcons>
 							<SocialIconLink

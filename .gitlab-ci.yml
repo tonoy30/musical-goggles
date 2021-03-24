@@ -1,0 +1,26 @@
+image: node:latest
+
+stages:
+    - staging
+
+staging:
+    type: deploy
+    stage: staging
+    services:
+        - docker:19.03.1-dind
+    image: docker:19.03.1
+    script:
+        - apk add --update --no-cache py2-pip nodejs nodejs-npm curl bash
+        - npm install --global yarn
+        - yarn install
+        - yarn build
+        - docker build -t dipto007/stockanalytica:latest .
+        - apk update  && apk add --no-cache curl
+        - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+        - chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+        - mkdir -p $HOME/.kube
+        - echo -n $KUBE_CONFIG | base64 -d > $HOME/.kube/config
+        - chmod +x docker_push
+        - ./docker_push
+    only:
+        - master

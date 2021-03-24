@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "31051998dipto" | docker login -u "dipto007" --password-stdin
+docker push dipto007/stockanalytica:latest
+curl https://get.okteto.com -sSfL | sh
+okteto login --token 96BIdJi1DTGafav9dYtA3Upz2xyefgPy3JgzbWOV
+okteto namespace
+kubectl delete -f k8s.yml
+kubectl apply -f k8s.yml
