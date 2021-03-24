@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
 import styled from "styled-components";
 
-export const Nav = styled.nav`
-	background: #000;
+export const Nav = styled.nav<{ isScrolling?: boolean }>`
+	background: ${({ isScrolling }) => (isScrolling ? "#000" : "transparent")};
 	height: 80px;
 	display: flex;
 	margin-top: -80px;
@@ -76,7 +76,7 @@ export const NavScrollLink = styled(Scroll)`
 	height: 100%;
 	cursor: pointer;
 
-	&:active {
+	&.active {
 		border-bottom: 3px solid #01bf71;
 	}
 `;

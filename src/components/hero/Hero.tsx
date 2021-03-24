@@ -21,7 +21,7 @@ const Hero = () => {
 		setHover(!hover);
 	};
 	return (
-		<HeroContainer>
+		<HeroContainer id="home">
 			<HeroBg>
 				<VideoBg autoPlay loop muted src={Video} />
 			</HeroBg>
@@ -36,6 +36,9 @@ const Hero = () => {
 						primary="true"
 						dark="true"
 						to="signup"
+						smooth={true}
+						spy={true}
+						offset={-80}
 						onMouseEnter={onHover}
 						onMouseLeave={onHover}
 					>
