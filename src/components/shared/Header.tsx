@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Dropdown } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
@@ -39,8 +39,8 @@ export class Header extends Component<any, any> {
 				<div className="az-header">
 					<div className="container">
 						<div className="az-header-left">
-							<a href="#/" className="az-logo">
-								<span></span> Stock Analytica
+							<a href="/home" className="az-logo">
+								<span></span> stock analytica
 							</a>
 							<a
 								id="azMenuShow"
@@ -55,8 +55,8 @@ export class Header extends Component<any, any> {
 						</div>
 						<div className="az-header-menu">
 							<div className="az-header-menu-header">
-								<Link to="/" className="az-logo">
-									<span></span> azia
+								<Link to="/home" className="az-logo">
+									<span></span> SA
 								</Link>
 								<a
 									href="#/"
@@ -77,58 +77,13 @@ export class Header extends Component<any, any> {
 									}
 								>
 									<Link to="/dashboard" className="nav-link">
-										<i className="typcn typcn-chart-area-outline"></i>{" "}
+										<i className="typcn typcn-chart-area-outline"></i>
 										Dashboard
 									</Link>
-								</li>
-								<li className="nav-item">
-									<Dropdown
-										className={
-											this.isPathActive("/general-pages")
-												? "nav-item active"
-												: "nav-item"
-										}
-									>
-										<Dropdown.Toggle
-											as={"a"}
-											className="nav-link with-sub"
-										>
-											<i className="typcn typcn-document"></i>{" "}
-											Pages
-										</Dropdown.Toggle>
-										<Dropdown.Menu className="az-menu-sub">
-											<Link
-												to="/signin"
-												className={
-													this.isPathActive("/signin")
-														? "nav-link active"
-														: "nav-link"
-												}
-											>
-												Sign In
-											</Link>
-											<Link
-												to="/signup"
-												className={
-													this.isPathActive("/signup")
-														? "nav-link active"
-														: "nav-link"
-												}
-											>
-												Sign Up
-											</Link>
-										</Dropdown.Menu>
-									</Dropdown>
 								</li>
 							</ul>
 						</div>
 						<div className="az-header-right">
-							<a
-								href="https://www.bootstrapdash.com/demo/azia-react-free/documentation/documentation.html"
-								className="az-header-search-link"
-							>
-								<i className="fas fa-file-alt"></i>
-							</a>
 							<a href="#/" className="az-header-search-link">
 								<i className="fas fa-search"></i>
 							</a>

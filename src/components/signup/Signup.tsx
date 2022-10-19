@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -16,10 +16,12 @@ const mapDispatchToProps = (dispatch) => ({
 		dispatch({ type: UPDATE_FIELD_AUTH, key: "email", value }),
 	onChangePassword: (value) =>
 		dispatch({ type: UPDATE_FIELD_AUTH, key: "password", value }),
-	onSubmit: (email, password) =>
+	changeUsername: (value) =>
+		dispatch({ type: UPDATE_FIELD_AUTH, key: "username", value }),
+	onSubmit: (email, password, username) =>
 		dispatch({
 			type: LOGIN,
-			payload: agent.Auth.register(email, password),
+			payload: agent.Auth.register(email, password, username),
 		}),
 	onUnload: () => dispatch({ type: LOGIN_PAGE_UNLOADED }),
 });
@@ -27,17 +29,24 @@ const mapDispatchToProps = (dispatch) => ({
 export class Signup extends Component<any, any> {
 	changeEmail: (ev: any) => any;
 	changePassword: (ev: any) => any;
-	submitForm: (email: any, password: any) => (ev: any) => void;
+	changeUsername: (ev: any) => any;
+	submitForm: (
+		email: string,
+		password: string,
+		username: string
+	) => (ev: any) => void;
 	constructor(props) {
 		super(props);
 		this.changeEmail = (ev) => this.props.onChangeEmail(ev.target.value);
 		this.changePassword = (ev) =>
 			this.props.onChangePassword(ev.target.value);
-		this.submitForm = (email, password) => (ev) => {
+		this.submitForm = (email, password, username) => (ev) => {
 			console.log(email, password);
 			ev.preventDefault();
-			this.props.onSubmit(email, password);
+			this.props.onSubmit(email, password, username);
 		};
+		this.changeUsername = (ev) =>
+			this.props.changeUsername(ev.target.value);
 	}
 
 	componentWillUnmount() {
@@ -46,6 +55,7 @@ export class Signup extends Component<any, any> {
 	render() {
 		const email = this.props.email;
 		const password = this.props.password;
+		const username = this.props.username;
 		return (
 			<div>
 				<div className="az-signup-wrapper">
@@ -56,19 +66,19 @@ export class Signup extends Component<any, any> {
 								Stock Analytica<span>i</span>a
 							</h1>
 							<h5>
-								Responsive Modern Dashboard &amp; Admin Template
+								Responsive Modern Dashboard &amp; Admin Panel
 							</h5>
 							<p>
 								We are excited to launch our new company and
-								product Azia. After being featured in too many
-								magazines to mention and having created an
-								online stir, we know that BootstrapDash is going
-								to be big. We also hope to win Startup Fictional
-								Business of the Year this year.
+								product stock analytica. After being featured in
+								too many magazines to mention and having created
+								an online stir, we know that BootstrapDash is
+								going to be big. We also hope to win Startup
+								Fictional Business of the Year this year.
 							</p>
 							<p>
 								Browse our site and see for yourself why you
-								need Azia.
+								need stock analytica.
 							</p>
 							<a href="#/" className="btn btn-outline-indigo">
 								Learn More
@@ -84,13 +94,21 @@ export class Signup extends Component<any, any> {
 								It's free to signup and only takes a minute.
 							</h4>
 
-							<form onSubmit={this.submitForm(email, password)}>
+							<form
+								onSubmit={this.submitForm(
+									email,
+									password,
+									username
+								)}
+							>
 								<div className="form-group">
-									<label>Firstname &amp; Lastname</label>
+									<label>Username</label>
 									<input
 										type="text"
 										className="form-control"
-										placeholder="Enter your firstname and lastname"
+										placeholder="Enter your username"
+										value={username}
+										onChange={this.changeUsername}
 									/>
 								</div>
 								{/* form-group */}

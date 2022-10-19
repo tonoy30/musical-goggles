@@ -42,10 +42,9 @@ class App extends React.Component<any, any> {
 		if (token) {
 			agent.setToken(token);
 		} else {
-			store.dispatch(push("/signin"));
+			store.dispatch(push("/signup"));
 		}
-
-		//this.props.onLoad(token ? agent.Auth.current() : null, token);
+		this.props.onLoad(token ? agent.Auth.current() : null, token);
 	}
 
 	componentDidMount() {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
@@ -43,7 +43,7 @@ const Header = ({ toggle }: IProps) => {
 			<Nav isScrolling={isScrolling}>
 				<NavContainer>
 					<NavLogo to="/" onClick={scrollToHome}>
-						Dollar
+						stock analytica
 					</NavLogo>
 					<MobileLogo onClick={toggle}>
 						<FaBars />
@@ -84,13 +84,13 @@ const Header = ({ toggle }: IProps) => {
 						</NavItem>
 						<NavItem>
 							<NavScrollLink
-								to="signup"
+								to="teams"
 								smooth={true}
 								duration={500}
 								spy={true}
 								offset={-80}
 							>
-								Sign Up
+								Teams
 							</NavScrollLink>
 						</NavItem>
 					</NavMenu>

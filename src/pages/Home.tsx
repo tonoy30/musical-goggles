@@ -5,7 +5,7 @@ import Hero from "../components/hero/Hero";
 import Info from "../components/info/Info";
 import Services from "../components/services/Services";
 import Sidebar from "../components/sidebar/Sidebar";
-import { Discover, InfoData, SignUp } from "./data";
+import { Discover, InfoData, Teams } from "./data";
 
 const Home = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const Home = () => {
 			<Info {...InfoData} />
 			<Info {...Discover} />
 			<Services />
-			<Info {...SignUp} />
+			<Info {...Teams} />
 			<Footer />
 		</>
 	);

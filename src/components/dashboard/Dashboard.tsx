@@ -62,7 +62,6 @@ export class Dashboard extends Component<any, any> {
 			return;
 		}
 		this.ws.close();
-		clearInterval();
 	}
 	timer(timer: any) {
 		throw new Error("Method not implemented.");
@@ -1579,163 +1578,255 @@ export class Dashboard extends Component<any, any> {
 						</div>
 						{/* row */}
 
-						{/*<div className="row row-sm mg-b-20 mg-lg-b-0">*/}
-						{/*    <div className="col-lg-5 col-xl-4">*/}
-						{/*        <div className="row row-sm">*/}
-						{/*            <div className="col-md-6 col-lg-12 mg-b-20 mg-md-b-0 mg-lg-b-20">*/}
-						{/*                <div className="card card-dashboard-five">*/}
-						{/*                    <div className="card-header">*/}
-						{/*                        <h6 className="card-title">Acquisition</h6>*/}
-						{/*                        <span className="card-text">Tells you where your visitors originated from, such as search engines, social networks or website referrals.</span>*/}
-						{/*                    </div>*/}
-						{/*                    /!* card-header *!/*/}
-						{/*                    <div className="card-body row row-sm">*/}
-						{/*                        <div className="col-6 d-sm-flex align-items-center">*/}
-						{/*                            <div className="card-chart bg-primary acquisition-chart">*/}
-						{/*                                <Bar className="w-50" data={this.acquisitionChart1Data}*/}
-						{/*                                     options={this.acquisitionChart1Options}/>*/}
-						{/*                            </div>*/}
-						{/*                            <div>*/}
-						{/*                                <label>Bounce Rate</label>*/}
-						{/*                                <h4>33.50%</h4>*/}
-						{/*                            </div>*/}
-						{/*                        </div>*/}
-						{/*                        /!* col *!/*/}
-						{/*                        <div className="col-6 d-sm-flex align-items-center">*/}
-						{/*                            <div className="card-chart bg-purple acquisition-chart">*/}
-						{/*                                <Bar data={this.acquisitionChart2Data}*/}
-						{/*                                     options={this.acquisitionChart2Options}/>*/}
-						{/*                            </div>*/}
-						{/*                            <div>*/}
-						{/*                                <label>Sessions</label>*/}
-						{/*                                <h4>9,065</h4>*/}
-						{/*                            </div>*/}
-						{/*                        </div>*/}
-						{/*                        /!* col *!/*/}
-						{/*                    </div>*/}
-						{/*                    /!* card-body *!/*/}
-						{/*                </div>*/}
-						{/*                /!* card-dashboard-five *!/*/}
-						{/*            </div>*/}
-						{/*            /!* col *!/*/}
-						{/*            <div className="col-md-6 col-lg-12">*/}
-						{/*                <div className="card card-dashboard-five">*/}
-						{/*                    <div className="card-header">*/}
-						{/*                        <h6 className="card-title">Sessions</h6>*/}
-						{/*                        <span className="card-text"> A session is the period time a user is actively engaged with your website, app, etc.</span>*/}
-						{/*                    </div>*/}
-						{/*                    /!* card-header *!/*/}
-						{/*                    <div className="card-body row row-sm">*/}
-						{/*                        <div className="col-6">*/}
-						{/*                            <div className="d-sm-flex align-items-center">*/}
-						{/*                                <div className="mg-b-10 mg-sm-b-0 mg-sm-r-10 wd-50 ht-40">*/}
-						{/*                                    <Pie data={this.sessionsChart1Data}*/}
-						{/*                                         options={this.sessionsChart1Options}/>*/}
-						{/*                                </div>*/}
-						{/*                                <div>*/}
-						{/*                                    <label>% New Sessions</label>*/}
-						{/*                                    <h4>26.80%</h4>*/}
-						{/*                                </div>*/}
-						{/*                            </div>*/}
-						{/*                        </div>*/}
-						{/*                        /!* col *!/*/}
-						{/*                        <div className="col-6">*/}
-						{/*                            <div className="d-sm-flex align-items-center">*/}
-						{/*                                <div className="mg-b-10 mg-sm-b-0 mg-sm-r-10 wd-50 ht-40">*/}
-						{/*                                    <Pie data={this.sessionsChart2Data}*/}
-						{/*                                         options={this.sessionsChart2Options}/>*/}
-						{/*                                </div>*/}
-						{/*                                <div>*/}
-						{/*                                    <label>Pages/Session</label>*/}
-						{/*                                    <h4>1,005</h4>*/}
-						{/*                                </div>*/}
-						{/*                            </div>*/}
-						{/*                        </div>*/}
-						{/*                        /!* col *!/*/}
-						{/*                    </div>*/}
-						{/*                    /!* card-body *!/*/}
-						{/*                </div>*/}
-						{/*                /!* card-dashboard-five *!/*/}
-						{/*            </div>*/}
-						{/*            /!* col *!/*/}
-						{/*        </div>*/}
-						{/*        /!* row *!/*/}
-						{/*    </div>*/}
-						{/*    /!* col-lg-3 *!/*/}
-						{/*    <div className="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">*/}
-						{/*        <div className="card card-table-one">*/}
-						{/*            <h6 className="card-title">What pages do your users visit</h6>*/}
-						{/*            <p className="az-content-text mg-b-20">Part of this date range occurs before the new*/}
-						{/*                users metric had been calculated, so the old users metric is displayed.</p>*/}
-						{/*            <div className="table-responsive">*/}
-						{/*                <table className="table">*/}
-						{/*                    <thead>*/}
-						{/*                    <tr>*/}
-						{/*                        <th className="wd-5p">&nbsp;</th>*/}
-						{/*                        <th className="wd-45p">Country</th>*/}
-						{/*                        <th>Entrances</th>*/}
-						{/*                        <th>Bounce Rate</th>*/}
-						{/*                        <th>Exits</th>*/}
-						{/*                    </tr>*/}
-						{/*                    </thead>*/}
-						{/*                    <tbody>*/}
-						{/*                    <tr>*/}
-						{/*                        <td><i className="flag-icon flag-icon-us flag-icon-squared"></i></td>*/}
-						{/*                        <td><strong>United States</strong></td>*/}
-						{/*                        <td><strong>134</strong> (1.51%)</td>*/}
-						{/*                        <td>33.58%</td>*/}
-						{/*                        <td>15.47%</td>*/}
-						{/*                    </tr>*/}
-						{/*                    <tr>*/}
-						{/*                        <td><i className="flag-icon flag-icon-gb flag-icon-squared"></i></td>*/}
-						{/*                        <td><strong>United Kingdom</strong></td>*/}
-						{/*                        <td><strong>290</strong> (3.30%)</td>*/}
-						{/*                        <td>9.22%</td>*/}
-						{/*                        <td>7.99%</td>*/}
-						{/*                    </tr>*/}
-						{/*                    <tr>*/}
-						{/*                        <td><i className="flag-icon flag-icon-in flag-icon-squared"></i></td>*/}
-						{/*                        <td><strong>India</strong></td>*/}
-						{/*                        <td><strong>250</strong> (3.00%)</td>*/}
-						{/*                        <td>20.75%</td>*/}
-						{/*                        <td>2.40%</td>*/}
-						{/*                    </tr>*/}
-						{/*                    <tr>*/}
-						{/*                        <td><i className="flag-icon flag-icon-ca flag-icon-squared"></i></td>*/}
-						{/*                        <td><strong>Canada</strong></td>*/}
-						{/*                        <td><strong>216</strong> (2.79%)</td>*/}
-						{/*                        <td>32.07%</td>*/}
-						{/*                        <td>15.09%</td>*/}
-						{/*                    </tr>*/}
-						{/*                    <tr>*/}
-						{/*                        <td><i className="flag-icon flag-icon-fr flag-icon-squared"></i></td>*/}
-						{/*                        <td><strong>France</strong></td>*/}
-						{/*                        <td><strong>216</strong> (2.79%)</td>*/}
-						{/*                        <td>32.07%</td>*/}
-						{/*                        <td>15.09%</td>*/}
-						{/*                    </tr>*/}
-						{/*                    <tr>*/}
-						{/*                        <td><i className="flag-icon flag-icon-ph flag-icon-squared"></i></td>*/}
-						{/*                        <td><strong>Philippines</strong></td>*/}
-						{/*                        <td><strong>197</strong> (2.12%)</td>*/}
-						{/*                        <td>32.07%</td>*/}
-						{/*                        <td>15.09%</td>*/}
-						{/*                    </tr>*/}
-						{/*                    </tbody>*/}
-						{/*                </table>*/}
-						{/*            </div>*/}
-						{/*            /!* table-responsive *!/*/}
-						{/*        </div>*/}
-						{/*        /!* card *!/*/}
-						{/*    </div>*/}
-						{/*    /!* col-lg *!/*/}
-
-						{/*</div>*/}
+						<div className="row row-sm mg-b-20 mg-lg-b-0">
+							<div className="col-lg-5 col-xl-4">
+								<div className="row row-sm">
+									<div className="col-md-6 col-lg-12 mg-b-20 mg-md-b-0 mg-lg-b-20">
+										<div className="card card-dashboard-five">
+											<div className="card-header">
+												<h6 className="card-title">
+													Acquisition
+												</h6>
+												<span className="card-text">
+													Tells you where your
+													visitors originated from,
+													such as search engines,
+													social networks or website
+													referrals.
+												</span>
+											</div>
+											<div className="card-body row row-sm">
+												<div className="col-6 d-sm-flex align-items-center">
+													<div className="card-chart bg-primary acquisition-chart">
+														<Bar
+															data={
+																this
+																	.acquisitionChart1Data
+															}
+															options={
+																this
+																	.acquisitionChart1Options
+															}
+														/>
+													</div>
+													<div>
+														<label>
+															Bounce Rate
+														</label>
+														<h4>33.50%</h4>
+													</div>
+												</div>
+												<div className="col-6 d-sm-flex align-items-center">
+													<div className="card-chart bg-purple acquisition-chart">
+														<Bar
+															data={
+																this
+																	.acquisitionChart2Data
+															}
+															options={
+																this
+																	.acquisitionChart2Options
+															}
+														/>
+													</div>
+													<div>
+														<label>Sessions</label>
+														<h4>9,065</h4>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="col-md-6 col-lg-12">
+										<div className="card card-dashboard-five">
+											<div className="card-header">
+												<h6 className="card-title">
+													Sessions
+												</h6>
+												<span className="card-text">
+													{" "}
+													A session is the period time
+													a user is actively engaged
+													with your website, app, etc.
+												</span>
+											</div>
+											<div className="card-body row row-sm">
+												<div className="col-6">
+													<div className="d-sm-flex align-items-center">
+														<div className="mg-b-10 mg-sm-b-0 mg-sm-r-10 wd-50 ht-40">
+															<Pie
+																data={
+																	this
+																		.sessionsChart1Data
+																}
+																options={
+																	this
+																		.sessionsChart1Options
+																}
+															/>
+														</div>
+														<div>
+															<label>
+																% New Sessions
+															</label>
+															<h4>26.80%</h4>
+														</div>
+													</div>
+												</div>
+												<div className="col-6">
+													<div className="d-sm-flex align-items-center">
+														<div className="mg-b-10 mg-sm-b-0 mg-sm-r-10 wd-50 ht-40">
+															<Pie
+																data={
+																	this
+																		.sessionsChart2Data
+																}
+																options={
+																	this
+																		.sessionsChart2Options
+																}
+															/>
+														</div>
+														<div>
+															<label>
+																Pages/Session
+															</label>
+															<h4>1,005</h4>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="col-lg-7 col-xl-8 mg-t-20 mg-lg-t-0">
+								<div className="card card-table-one">
+									<h6 className="card-title">
+										What pages do your users visit
+									</h6>
+									<p className="az-content-text mg-b-20">
+										Part of this date range occurs before
+										the new users metric had been
+										calculated, so the old users metric is
+										displayed.
+									</p>
+									<div className="table-responsive">
+										<table className="table">
+											<thead>
+												<tr>
+													<th className="wd-5p">
+														&nbsp;
+													</th>
+													<th className="wd-45p">
+														Country
+													</th>
+													<th>Entrances</th>
+													<th>Bounce Rate</th>
+													<th>Exits</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<i className="flag-icon flag-icon-us flag-icon-squared"></i>
+													</td>
+													<td>
+														<strong>
+															United States
+														</strong>
+													</td>
+													<td>
+														<strong>134</strong>{" "}
+														(1.51%)
+													</td>
+													<td>33.58%</td>
+													<td>15.47%</td>
+												</tr>
+												<tr>
+													<td>
+														<i className="flag-icon flag-icon-gb flag-icon-squared"></i>
+													</td>
+													<td>
+														<strong>
+															United Kingdom
+														</strong>
+													</td>
+													<td>
+														<strong>290</strong>{" "}
+														(3.30%)
+													</td>
+													<td>9.22%</td>
+													<td>7.99%</td>
+												</tr>
+												<tr>
+													<td>
+														<i className="flag-icon flag-icon-in flag-icon-squared"></i>
+													</td>
+													<td>
+														<strong>India</strong>
+													</td>
+													<td>
+														<strong>250</strong>{" "}
+														(3.00%)
+													</td>
+													<td>20.75%</td>
+													<td>2.40%</td>
+												</tr>
+												<tr>
+													<td>
+														<i className="flag-icon flag-icon-ca flag-icon-squared"></i>
+													</td>
+													<td>
+														<strong>Canada</strong>
+													</td>
+													<td>
+														<strong>216</strong>{" "}
+														(2.79%)
+													</td>
+													<td>32.07%</td>
+													<td>15.09%</td>
+												</tr>
+												<tr>
+													<td>
+														<i className="flag-icon flag-icon-fr flag-icon-squared"></i>
+													</td>
+													<td>
+														<strong>France</strong>
+													</td>
+													<td>
+														<strong>216</strong>{" "}
+														(2.79%)
+													</td>
+													<td>32.07%</td>
+													<td>15.09%</td>
+												</tr>
+												<tr>
+													<td>
+														<i className="flag-icon flag-icon-ph flag-icon-squared"></i>
+													</td>
+													<td>
+														<strong>
+															Philippines
+														</strong>
+													</td>
+													<td>
+														<strong>197</strong>{" "}
+														(2.12%)
+													</td>
+													<td>32.07%</td>
+													<td>15.09%</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
 						{/* row */}
 					</div>
 					{/* az-content-body */}
 				</div>
-				)
 			</div>
 		);
 	}

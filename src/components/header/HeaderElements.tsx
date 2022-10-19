@@ -38,6 +38,9 @@ export const NavLogo = styled(Link)`
 	margin-left: 24px;
 	font-weight: bold;
 	text-decoration: none;
+	&:hover {
+		color: #5b47fb;
+	}
 `;
 export const MobileLogo = styled.div`
 	display: none;

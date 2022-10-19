@@ -39,8 +39,8 @@ export const Discover: PageModel = {
 	alt: "Car",
 };
 
-export const SignUp: PageModel = {
-	id: "signup",
+export const Teams: PageModel = {
+	id: "teams",
 	dark: false,
 	primary: true,
 	lightBg: true,

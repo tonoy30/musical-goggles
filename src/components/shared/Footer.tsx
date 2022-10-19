@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => (
 	<>
 		<div className="az-footer ht-40">
@@ -8,13 +6,12 @@ const Footer = () => (
 					<span className="text-muted text-center text-sm-left d-block d-sm-inline-block">
 						Copyright &copy;&nbsp;
 						<a
-							href="https://stockanalytica-diptomondal007.cloud.okteto.net/"
+							href="https://stockanalytica.com/"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							Stock Analytica {new Date().getFullYear()}
 						</a>
-						2020
 					</span>
 				</div>
 			</div>

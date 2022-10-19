@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 // @ts-ignore
 import Video from "../../videos/video.mp4";
 import { Button } from "../common/Button";
@@ -16,7 +17,7 @@ import {
 
 const Hero = () => {
 	const [hover, setHover] = useState(false);
-
+	const history = useHistory();
 	const onHover = () => {
 		setHover(!hover);
 	};
@@ -35,7 +36,8 @@ const Hero = () => {
 					<Button
 						primary="true"
 						dark="true"
-						to="signup"
+						to=""
+						onClick={() => history.push("/signup")}
 						smooth={true}
 						spy={true}
 						offset={-80}

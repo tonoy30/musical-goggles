@@ -3,8 +3,7 @@ import _superagent from "superagent";
 import superAgentPromise from "superagent-promise";
 
 const agent = superAgentPromise(_superagent, global.Promise);
-export const API_ROOT =
-	"https://stockanalytica.centralindia.cloudapp.azure.com";
+export const API_ROOT = "http://localhost:4000";
 
 //const encode = encodeURIComponent;
 const responseBody = (res: any) => res.body;
@@ -43,20 +42,21 @@ const requests = {
 const Auth = {
 	current: () => requests.get("/user"),
 	login: (email: string, password: string) =>
-		requests.post("/auth/api/v1/login", {
-			email: email,
+		requests.post("/api/auth/login", {
+			emailOrUsername: email,
 			password: password,
 		}),
-	register: (email: string, password: string) =>
-		requests.post("/auth/api/v1/register", {
+	register: (email: string, password: string, username: string) =>
+		requests.post("/api/auth/signup", {
 			email: email,
 			password: password,
+			username: username,
 		}),
 	save: (user: any) => requests.put("/user", { user }),
 };
 
 const History = {
-	upDown: () => requests.get("/history/api/v1/updown"),
+	upDown: () => requests.get("/updown"),
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
