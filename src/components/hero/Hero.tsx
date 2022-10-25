@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-// @ts-ignore
-import Video from "../../videos/video.mp4";
 import { Button } from "../common/Button";
 import {
 	ArrowForward,
@@ -24,7 +22,14 @@ const Hero = () => {
 	return (
 		<HeroContainer id="home">
 			<HeroBg>
-				<VideoBg autoPlay loop muted src={Video} />
+				<VideoBg
+					autoPlay
+					loop
+					muted
+					src={
+						"https://github.com/tonoy30/musical-goggles/blob/main/src/videos/video.mp4"
+					}
+				/>
 			</HeroBg>
 			<HeroContent>
 				<HeroH1>Virtual Stock Market Made Easy</HeroH1>

@@ -1,7 +1,6 @@
 {
 	"name": "stock-analytica",
 	"version": "0.1.1",
-	"homepage": "https://tonoy30.github.io/musical-goggles",
 	"private": true,
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.15.3",
@@ -79,7 +78,6 @@
 		"@types/react-scroll": "^1.8.2",
 		"@types/redux-logger": "^3.0.8",
 		"@types/styled-components": "^5.1.7",
-		"@types/superagent": "^4.1.10",
-		"gh-pages": "^4.0.0"
+		"@types/superagent": "^4.1.10"
 	}
 }
