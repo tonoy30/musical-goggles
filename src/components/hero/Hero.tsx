@@ -27,7 +27,7 @@ const Hero = () => {
 					loop
 					muted
 					src={
-						"https://asset.cloudinary.com/drgxgrvli/b3079023453f1b9bf2aa3c0b952c2680"
+						"https://res.cloudinary.com/drgxgrvli/video/upload/v1666725338/video_sy9yey.mp4"
 					}
 				/>
 			</HeroBg>
