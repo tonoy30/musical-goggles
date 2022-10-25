@@ -1,4 +1,3 @@
-import React from "react";
 import {
 	FaFacebook,
 	FaInstagram,
@@ -34,26 +33,26 @@ const Footer = () => {
 					<FooterLinksWrapper>
 						<FooterLinkItems>
 							<FooterLinkTitle>About Us</FooterLinkTitle>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
+							<FooterLink to="about">Dummy 1</FooterLink>
+							<FooterLink to="about">Dummy 2</FooterLink>
+							<FooterLink to="about">Dummy 3</FooterLink>
 						</FooterLinkItems>
 						<FooterLinkItems>
 							<FooterLinkTitle>Services</FooterLinkTitle>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
+							<FooterLink to="about">Dummy 4</FooterLink>
+							<FooterLink to="about">Dummy 5</FooterLink>
+							<FooterLink to="about">Dummy 6</FooterLink>
 						</FooterLinkItems>
-					</FooterLinksWrapper>
-					<FooterLinksWrapper>
 						<FooterLinkItems>
 							<FooterLinkTitle>Discover</FooterLinkTitle>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
-							<FooterLink to="about">About</FooterLink>
+							<FooterLink to="about">Dummy 7</FooterLink>
+							<FooterLink to="about">Dummy 8</FooterLink>
+							<FooterLink to="about">Dummy 9</FooterLink>
+						</FooterLinkItems>
+						<FooterLinkItems>
+							<FooterLinkTitle>Contacts</FooterLinkTitle>
+							<FooterLink to="about">Gmail</FooterLink>
+							<FooterLink to="about">PostCode</FooterLink>
 						</FooterLinkItems>
 						<FooterLinkItems>
 							<FooterLinkTitle>Social Media</FooterLinkTitle>
