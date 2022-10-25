@@ -27,7 +27,7 @@ const Hero = () => {
 					loop
 					muted
 					src={
-						"https://github.com/tonoy30/musical-goggles/blob/main/src/videos/video.mp4"
+						"https://asset.cloudinary.com/drgxgrvli/b3079023453f1b9bf2aa3c0b952c2680"
 					}
 				/>
 			</HeroBg>
